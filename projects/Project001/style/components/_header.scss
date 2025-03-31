@@ -1,0 +1,109 @@
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100svh;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+}
+
+.icon,
+.content,
+.nav {
+  position: relative;
+  z-index: 2;
+}
+
+.icon {
+  font-size: 3.3em;
+  color: rgba(255, 255, 255, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  padding: 0.88rem;
+  border-radius: 30%;
+}
+
+.ver-line {
+  height: 2.5rem;
+  width: 0.1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.line {
+  width: 80%;
+  height: 0.2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.content h1 {
+  font-size: 1.5em;
+  margin-top: 3rem;
+  color: rgba(255, 255, 255, 1); /* Changed to 100% brightness */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  margin-bottom: -1em;
+}
+
+.content p {
+  color: rgba(255, 255, 255, 1); /* Changed to 100% brightness */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  font-size: 1.2em;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 80%;
+  margin: 3rem auto;
+}
+
+.nav {
+  list-style: none;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.nav li {
+  font-size: 1.44em;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+  padding: 1.4rem 5rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.nav li:nth-child(4) {
+  border-bottom: none;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1); /* Changed to 100% brightness */
+}
+
+.nav li:hover {
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  padding: 2rem 0;
+
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -4rem;
+}
