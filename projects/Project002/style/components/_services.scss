@@ -1,0 +1,39 @@
+.services {
+  width: 100%;
+
+  .heading {
+    font-size: 1.4em;
+    font-family: $font-fam-main;
+    background-color: $main-color;
+    padding: 2rem;
+    text-align: center;
+    line-height: 2.4rem;
+  }
+  .main-content {
+    p {
+      padding: 2rem;
+      font-family: $font-fam-p;
+      line-height: 2rem;
+    }
+
+    .logos {
+      padding: 0 2rem;
+
+      ul {
+        list-style-type: none;
+
+        li {
+          margin: 2rem 0;
+
+          i {
+            font-size: 1.3em;
+            background-color: rgba(128, 128, 128, 0.1);
+            padding: 1rem;
+            border-radius: 50%;
+            margin-right: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

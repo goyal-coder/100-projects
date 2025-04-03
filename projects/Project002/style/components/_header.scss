@@ -1,0 +1,58 @@
+@import "_variables";
+header {
+  .content {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    background-color: $main-color;
+    max-width: 100%;
+
+    h1 {
+      font-size: 4em;
+      margin-bottom: 1rem;
+      padding-top: 2.33rem;
+
+      font-family: $font-fam-main;
+    }
+
+    p {
+      font-size: 1em;
+      font-family: $font-fam-p;
+      line-height: 2rem;
+      padding-top: 1.7rem;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .color-box {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    background-color: $main-color;
+    font-size: 2em;
+    font-family: $font-fam-main;
+  }
+}
+
+.hero {
+  padding: 2rem;
+  font-family: $font-fam-p;
+  line-height: 2rem;
+  font-size: 0.9em;
+
+  img {
+    width: 97%;
+    height: auto;
+    display: block;
+    margin: 2.5rem auto;
+  }
+}

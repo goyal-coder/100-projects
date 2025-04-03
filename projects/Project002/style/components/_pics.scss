@@ -1,0 +1,33 @@
+.pics {
+  .heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: $main-color;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    padding: 2rem;
+  }
+
+  .para {
+    font-size: 0.9em;
+    margin-bottom: 1rem;
+    padding: 2rem;
+  }
+
+  .first {
+    padding: 2rem;
+
+    h4 {
+      margin-top: -2rem;
+    }
+
+    p {
+      margin: 2rem 0;
+    }
+
+    img {
+      width: 90%;
+      height: auto;
+    }
+  }
+}
