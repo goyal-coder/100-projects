@@ -3,83 +3,7 @@
 @import "style/components/_card.scss";
 @import "style/components/_about.scss";
 
-/* FAQ Section Styling */
-#faq {
-  padding: 50px;
-  color: white;
-  height: 100svh;
-  width: 100%;
-  display: flex;
-  border-bottom: 2rem solid white;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-#faq h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 3rem;
-  color: white;
-  border: 2px solid white;
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  box-shadow: 3px 3px 10px rgb(255, 254, 254);
-  background: linear-gradient(145deg, blue, white);
-}
-
-/* FAQ Item */
-.faq-item {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 1.5rem;
-  margin-bottom: 15px;
-  border-radius: 12px;
-  width: 70%;
-  box-shadow: 3px 3px 10px #f7f6f6;
-  transition: box-shadow 0.3s ease-in-out;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Hide the answer by default */
-.faq-item p {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
-}
-
-/* Show the answer on hover */
-.faq-item:hover p {
-  max-height: 300px;
-  opacity: 1;
-}
-
-/* Hover Effect */
-.faq-item:hover {
-  box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.5);
-  transform: scale(1.03);
-}
-
-.faq-item h3 {
-  font-size: 1.6rem;
-  margin-bottom: 0.7rem;
-  text-decoration: underline;
-  text-align: center;
-  color: black;
-}
-
-.faq-item p {
-  font-size: 1rem;
-  line-height: 1.6;
-  text-align: center;
-  color: black;
-  margin-top: 10px;
-}
+@import "style/components/_faq.scss";
 
 /* Contact Section */
 #contact {
@@ -87,6 +11,7 @@
   color: white;
   text-align: center;
   opacity: 0;
+
   transform: translateY(20px);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
