@@ -1,0 +1,70 @@
+/* Header Styling (Mobile First) */
+header {
+  background: linear-gradient(145deg, blue, white);
+  color: #030303;
+  font-weight: 900;
+  width: 100%;
+  box-shadow: 0 5px 20px white;
+}
+
+/* Navigation for Mobile First */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: 900;
+  padding: 1rem;
+  font-size: 1.2em;
+}
+
+ul a {
+  color: black;
+  text-decoration: none;
+  margin: 0.5rem 0;
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  padding: 0.7rem;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Tablet / Laptop */
+@media (min-width: 768px) {
+  ul {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2rem;
+    font-size: 1.7em;
+  }
+}
+
+/* Desktop Wide */
+@media (min-width: 1280px) {
+  ul {
+    font-size: 1.2em;
+    padding: 1.2rem;
+  }
+}

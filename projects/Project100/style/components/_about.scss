@@ -1,0 +1,57 @@
+/* About Section Styling */
+#about {
+  border-bottom: 2rem solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sec {
+  width: 80%;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 0, 255, 0.8),
+    rgba(255, 255, 255, 0.9)
+  );
+  color: black;
+  padding: 2rem 1.3rem;
+  text-align: center;
+  border-radius: 20px;
+  margin: 2rem auto;
+  box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.5),
+    -5px -5px 15px rgba(0, 0, 255, 0.5);
+}
+
+.sec h2 {
+  font-size: 2rem;
+  text-decoration: underline;
+  font-weight: 900;
+  text-shadow: 2px 2px 5px #0000004d;
+  margin-bottom: 1rem;
+}
+
+.sec p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+  #about {
+    padding: 7rem 2rem;
+  }
+  .sec {
+    width: 70%;
+
+    h2 {
+      font-size: 3em;
+    }
+    p {
+      font-size: 1.5em;
+      font-weight: 900;
+    }
+  }
+}

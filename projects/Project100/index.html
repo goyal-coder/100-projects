@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Character encoding for proper text rendering -->
+        <meta charset="UTF-8">
+
+        <!-- Ensures proper rendering and touch zooming on mobile devices -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Short description of the page for SEO -->
+        <meta name="description"
+            content="AuraWeather – Get real-time, accurate weather updates for any city worldwide including temperature, humidity, wind speed & more.">
+
+        <!-- Relevant keywords for better search engine visibility -->
+        <meta name="keywords"
+            content="AuraWeather, weather app, real-time weather, forecast, temperature, humidity, wind speed, global weather, climate updates">
+
+        <!-- Author of the website -->
+        <meta name="author" content="Nandini">
+
+        <!-- Directs search engine crawlers to index the page and follow links -->
+        <meta name="robots" content="index, follow">
+
+        <!-- Open Graph tags for social media sharing -->
+        <meta property="og:title" content="AuraWeather – Real-time Global Weather Updates">
+        <meta property="og:description"
+            content="Check accurate, real-time weather data for any city with AuraWeather. Simple, responsive & always up-to-date.">
+        <meta property="og:type" content="website">
+
+        <!-- Title shown in the browser tab -->
+        <title>AuraWeather | Real-Time Global Weather</title>
+
+        <!-- Main stylesheet -->
+        <link rel="stylesheet" href="/Project100/style/style.css">
+
+        <!-- Font Awesome icons CDN (with integrity for security) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            integrity="sha512-Fo3rlrZj/k7ujTTXxQG9z1+2Iq+OVuvcfvvJ4N+1BHZK+l3V43wQ9kOaPjxL+N5x/ozH0C0JDkb3W9N+SglpHg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- Favicon (optional but recommended) -->
+        <link rel="icon" href="assets/mylogo.png" type="image/x-icon">
+    </head>
+
+
+    <body>
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Home Section -->
+            <section id="home">
+                <div class="card">
+                    <div class="search">
+                        <input type="text" placeholder="Enter your city name" spellcheck="false" aria-label="City Name">
+                        <button><img src="assets/search.png"></button>
+                    </div>
+                    <div class="weather">
+                        <img src="assets/broom.png" class="weather-icon">
+                        <h1 class="temp">--°C</h1>
+                        <h2 class="city">City</h2>
+                        <div class="details">
+                            <div class="col">
+                                <img src="assets/broom.png" alt="Humidity icon" class="humidity-icon">
+                                <div class="text">
+                                    <p class="humidity">--%</p>
+                                    <p>Humidity</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <img src="assets/broom.png" alt="Wind icon" class="wind-icon">
+                                <div class="text">
+                                    <p class="wind">-- km/h</p>
+                                    <p>Wind</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about">
+                <div class="sec">
+                    <h2>About This Site</h2>
+                    <p>This site allows you to check current weather conditions worldwide, including
+                        details such as temperature, humidity, wind speed, and other essential weather metrics.
+                        Whether you're planning your day or preparing for upcoming events, our tool offers you a quick
+                        and easy way to stay informed about the weather in your city or any other location across the
+                        globe.
+                        Simply enter the name of the city you want to know about, and get instant weather updates with
+                        detailed insights into the environmental conditions that affect your surroundings. Our reliable
+                        weather data comes from trusted global sources to ensure accuracy.</p>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq">
+                <h2>Frequently Asked Questions (FAQ)</h2>
+                <div class="faq-item">
+                    <h3>What is the weather API used for this site?</h3>
+                    <p>This website uses the OpenWeatherMap API, which provides real-time weather data for cities
+                        worldwide. This allows us to display accurate and up-to-date weather conditions, including
+                        temperature, humidity, wind speed, and more.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How can I check the weather?</h3>
+                    <p>To get the latest weather update, simply type the name of the city into the search bar and click
+                        the search button. The site will display current weather conditions like temperature, humidity,
+                        and wind speed.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I use this site on my mobile phone?</h3>
+                    <p>Yes, this site is fully responsive and works seamlessly on all devices, including mobile phones,
+                        tablets, and desktop computers. Stay updated on the go!</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What weather conditions are displayed?</h3>
+                    <p>The website provides detailed weather conditions, such as temperature, humidity, wind speed, and
+                        the overall weather condition (clear, cloudy, rainy, etc.). These metrics are displayed for any
+                        city you search for in real time.</p>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or feedback, feel free to reach out to us:</p>
+                <form id="contact-form">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+                    <label for="message">Your Message:</label><br>
+                    <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                    <button type="button" onclick="handleSubmit()">Send Message</button>
+                </form>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Your Website. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/goyal-builder" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/goyal-coder" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/nandini-goyal-b26578339/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+        <script type="text/javascript">
+            const baseURL = "https://api.openweathermap.org/data/2.5/weather?units=metric";
+
+            const searchBox = document.querySelector(".search input");
+            const searchBtn = document.querySelector(".search button");
+            const weatherIcon = document.querySelector(".weather-icon");
+            const key = 'ff19c9d8dacd0e5f339bc5f242cd49fe';
+
+            async function checkWeather(city) {
+                if (!city) return; // Prevent empty search
+                const response = await fetch(`${baseURL}&q=${city}&appid=${key}`);
+
+                if (!response.ok) {
+                    alert("City not found!"); // Handle invalid city names
+                    return;
+                }
+
+                const weatherData = await response.json();
+                console.log(weatherData);
+
+                document.querySelector(".city").innerHTML = weatherData.name;
+                document.querySelector(".temp").innerHTML = Math.round(weatherData.main.temp) + "°C";
+                document.querySelector(".humidity").innerHTML = weatherData.main.humidity + "%";
+                document.querySelector(".wind").innerHTML = weatherData.wind.speed + " km/h";
+
+                // Set weather icon based on the weather condition
+                const weatherCondition = weatherData.weather[0].main.toLowerCase();
+
+                if (weatherCondition === "clear") {
+                    weatherIcon.src = "assets/sunny.png";
+                } else if (weatherCondition === "clouds") {
+                    weatherIcon.src = "assets/cloudy.png";
+                } else if (weatherCondition === "rain") {
+                    weatherIcon.src = "assets/heavy-rain.png";
+                } else if (weatherCondition === "drizzle") {
+                    weatherIcon.src = "assets/drizzle.png";
+                } else if (weatherCondition === "thunderstorm") {
+                    weatherIcon.src = "assets/thunderstrom.png";
+                } else if (weatherCondition === "snow") {
+                    weatherIcon.src = "assets/snow.png";
+                } else if (weatherCondition === "mist") {
+                    weatherIcon.src = "assets/mist.png";
+                } else if (weatherCondition === "fog") {
+                    weatherIcon.src = "assets/fog.png";
+                } else if (weatherCondition === "haze") {
+                    weatherIcon.src = "assets/haze.png";
+                } else if (weatherCondition === "dust") {
+                    weatherIcon.src = "assets/broom.png";
+                } else if (weatherCondition === "wind") {
+                    weatherIcon.src = "assets/wind.png";
+                } else {
+                    weatherIcon.src = "assets/sunny.png"; // Default image if condition doesn't match
+                }
+            }
+
+            searchBtn.addEventListener("click", () => {
+                checkWeather(searchBox.value.trim());
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                document.body.classList.add("loaded");
+
+                // Default city for testing
+                const city = searchBox.value.trim() || "New York"; // Default city if no input
+                checkWeather(city);
+            });
+
+            // Initialize EmailJS
+            (function () {
+                emailjs.init('86DpoOTsPkjJZkQy2');
+            })();
+
+            // Get the form and add event listener
+            // document.getElementById('contact-form').addEventListener('submit', function (event) {
+            //     event.preventDefault();
+
+            //     const formData = new FormData(this);
+
+            // });
+
+            const handleSubmit = () => {
+                // const formData = {
+                //     name : document.getElementById('name').value,
+                //     email : document.getElementById('email').value,
+                //     message : document.getElementById('message').value,
+                // }
+                const frm = document.getElementById("contact-form");
+                console.log(frm);
+                emailjs.sendForm('service_1oivpvl', 'template_wl51hhd', frm)
+                    .then(function (response) {
+                        console.log("formData");
+                        console.log('Success:', response);
+                        alert('Your message has been sent!');
+                        document.getElementById('contact-form').reset(); // Reset form after sending
+                    })
+                    .catch(function (error) {
+                        console.log("formData");
+                        console.error('Error:', error);
+                        console.log("formData");
+                        alert('Something went wrong, please try again later.');
+                        // Log detailed error response
+                        console.log(error);
+                    });
+                console.log("Hii");
+            }
+
+        </script>
+
+    </body>
+
+</html>

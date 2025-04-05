@@ -1,0 +1,138 @@
+#home {
+  width: 100%;
+
+  border-bottom: 2rem solid white;
+}
+.card {
+  width: 85%;
+  background: linear-gradient(145deg, blue, white);
+  color: black;
+  border-radius: 1.7rem;
+  padding: 1.5rem;
+  text-align: center;
+  margin: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Search Bar */
+.search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.search input {
+  border: 0;
+  outline: 0;
+  background-color: white;
+  color: black;
+  padding: 0.6rem;
+  border-radius: 2rem;
+  font-size: 0.9em;
+  transition: all 0.3s ease-in-out;
+}
+
+.search img {
+  width: 1.4rem;
+}
+
+.search button {
+  border: 0;
+  outline: 0;
+  background-color: white;
+  color: black;
+  width: 3.5rem;
+  padding: 0.5rem 1rem;
+  height: auto;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Weather Update */
+.weather-icon {
+  margin-top: 3rem;
+  width: 20%;
+}
+
+.humidity-icon,
+.wind-icon {
+  width: 35%;
+  animation: float 2s infinite alternate ease-in-out;
+}
+
+.weather h1,
+.weather h2 {
+  margin-top: 2rem;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.text {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Tablet / Laptop */
+@media (min-width: 768px) {
+  .card {
+    .search {
+      input {
+        font-size: 1.4em;
+        padding: 1rem;
+        width: 65%;
+      }
+
+      button {
+        width: 14%;
+        padding: 0.7rem 1rem;
+
+        img {
+          width: 3.2rem;
+        }
+      }
+    }
+
+    .weather {
+      font-size: 2em;
+    }
+    .col {
+      font-size: 2em;
+    }
+  }
+}
+
+/* Desktop Wide */
+@media (min-width: 1280px) {
+  .card {
+    width: 50%;
+    margin-top: 2rem;
+
+    .search {
+      input {
+        font-size: 1em;
+        padding: 1rem;
+        width: 50%;
+        margin: 0 2rem;
+      }
+
+      button {
+        width: 10%;
+        padding: 0.7rem 1rem;
+
+        img {
+          width: 2.7rem;
+          height: auto;
+        }
+      }
+    }
+  }
+}
