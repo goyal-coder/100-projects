@@ -1,69 +1,70 @@
 const baseURL = "https://api.openweathermap.org/data/2.5/weather?units=metric";
+const apiKey = "ff19c9d8dacd0e5f339bc5f242cd49fe";
 
-const searchBox = document.querySelector(".search input");
-const searchBtn = document.querySelector(".search button");
+// DOM elements
+const searchBox = document.getElementById("city-input");
+const searchBtn = document.getElementById("enter-button");
 const weatherIcon = document.querySelector(".weather-icon");
-const key = "ff19c9d8dacd0e5f339bc5f242cd49fe";
+const humidityIcon = document.querySelector(".humidity-icon");
+const windIcon = document.querySelector(".wind-icon");
 
 async function checkWeather(city) {
-  if (!city) return; // Prevent empty search
-  const response = await fetch(`${baseURL}&q=${city}&appid=${key}`);
+  if (!city) return;
 
-  if (!response.ok) {
-    alert("City not found!"); // Handle invalid city names
-    return;
-  }
+  try {
+    const response = await fetch(`${baseURL}&q=${city}&appid=${apiKey}`);
 
-  const weatherData = await response.json();
-  console.log(weatherData);
+    if (!response.ok) {
+      alert("City not found!");
+      return;
+    }
 
-  document.querySelector(".city").innerHTML = weatherData.name;
-  document.querySelector(".temp").innerHTML =
-    Math.round(weatherData.main.temp) + "°C";
-  document.querySelector(".humidity").innerHTML =
-    weatherData.main.humidity + "%";
-  document.querySelector(".wind").innerHTML = weatherData.wind.speed + " km/h";
+    const data = await response.json();
+    console.log(data);
 
-  // Set weather icon based on the weather condition
-  const weatherCondition = weatherData.weather[0].main.toLowerCase();
+    document.querySelector(".city-name").innerHTML = data.name;
+    document.querySelector(".temperature").innerHTML =
+      Math.round(data.main.temp) + "°C";
+    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+    document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
 
-  if (weatherCondition === "clear") {
-    weatherIcon.src = "assets/sunny.png";
-  } else if (weatherCondition === "clouds") {
-    weatherIcon.src = "assets/cloudy.png";
-  } else if (weatherCondition === "rain") {
-    weatherIcon.src = "assets/heavy-rain.png";
-  } else if (weatherCondition === "drizzle") {
-    weatherIcon.src = "assets/drizzle.png";
-  } else if (weatherCondition === "thunderstorm") {
-    weatherIcon.src = "assets/thunderstrom.png";
-  } else if (weatherCondition === "snow") {
-    weatherIcon.src = "assets/snow.png";
-  } else if (weatherCondition === "mist") {
-    weatherIcon.src = "assets/mist.png";
-  } else if (weatherCondition === "fog") {
-    weatherIcon.src = "assets/fog.png";
-  } else if (weatherCondition === "haze") {
-    weatherIcon.src = "assets/haze.png";
-  } else if (weatherCondition === "dust") {
-    weatherIcon.src = "assets/broom.png";
-  } else if (weatherCondition === "wind") {
-    weatherIcon.src = "assets/wind.png";
-  } else {
-    weatherIcon.src = "assets/sunny.png"; // Default image if condition doesn't match
+    // Weather condition icon handling
+    const condition = data.weather[0].main.toLowerCase();
+
+    const icons = {
+      clear: "assets/sunny.png",
+      clouds: "assets/cloudy.png",
+      rain: "assets/heavy-rain.png",
+      drizzle: "assets/drizzle.png",
+      thunderstorm: "assets/thunderstrom.png",
+      snow: "assets/snow.png",
+      mist: "assets/mist.png",
+      fog: "assets/fog.png",
+      haze: "assets/haze.png",
+      dust: "assets/broom.png",
+      wind: "assets/wind.png",
+      humidity: "assets/humidity.png",
+    };
+
+    weatherIcon.src = icons[condition] || "assets/sunny.png";
+    humidityIcon.src = icons.humidity;
+    windIcon.src = icons.wind;
+  } catch (err) {
+    console.error("Weather API error:", err);
+    alert("Unable to fetch weather data.");
   }
 }
 
+// Event listener for search button
 searchBtn.addEventListener("click", () => {
-  checkWeather(searchBox.value.trim());
+  const city = searchBox.value.trim();
+  checkWeather(city);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+// Load default city on page load
+document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("loaded");
-
-  // Default city for testing
-  const city = searchBox.value.trim() || "New York"; // Default city if no input
-  checkWeather(city);
+  checkWeather(searchBox.value.trim() || "New York");
 });
 
 // Initialize EmailJS
@@ -71,37 +72,19 @@ document.addEventListener("DOMContentLoaded", function () {
   emailjs.init("86DpoOTsPkjJZkQy2");
 })();
 
-// Get the form and add event listener
-// document.getElementById('contact-form').addEventListener('submit', function (event) {
-//     event.preventDefault();
+// Handle contact form submission
+function handleSubmit() {
+  const form = document.getElementById("contact");
 
-//     const formData = new FormData(this);
-
-// });
-
-const handleSubmit = () => {
-  // const formData = {
-  //     name : document.getElementById('name').value,
-  //     email : document.getElementById('email').value,
-  //     message : document.getElementById('message').value,
-  // }
-  const frm = document.getElementById("contact-form");
-  console.log(frm);
   emailjs
-    .sendForm("service_1oivpvl", "template_wl51hhd", frm)
-    .then(function (response) {
-      console.log("formData");
+    .sendForm("service_1oivpvl", "template_wl51hhd", form)
+    .then((response) => {
       console.log("Success:", response);
       alert("Your message has been sent!");
-      document.getElementById("contact-form").reset(); // Reset form after sending
+      form.reset();
     })
-    .catch(function (error) {
-      console.log("formData");
+    .catch((error) => {
       console.error("Error:", error);
-      console.log("formData");
-      alert("Something went wrong, please try again later.");
-      // Log detailed error response
-      console.log(error);
+      alert("Something went wrong. Please try again later.");
     });
-  console.log("Hii");
-};
+}

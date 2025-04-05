@@ -9,3 +9,12 @@
 body {
   background-color: black !important;
 }
+/* Reveal sections on load */
+body.loaded #home,
+body.loaded #about,
+body.loaded #faq,
+body.loaded #contact,
+body.loaded .faq-item {
+  opacity: 1;
+  transform: translateY(0);
+}

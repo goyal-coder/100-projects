@@ -79,6 +79,16 @@ body {
   background-color: black !important;
 }
 
+/* Reveal sections on load */
+body.loaded #home,
+body.loaded #about,
+body.loaded #faq,
+body.loaded #contact,
+body.loaded .faq-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 #home {
   width: 100%;
   border-bottom: 2rem solid white;
@@ -255,97 +265,89 @@ body {
     font-weight: 900;
   }
 }
-/* FAQ Section Styling */
-#faq {
-  padding: 50px;
+/* FAQ Section */
+.faq {
+  padding: 2rem 0; /* 'auto' doesn't work on padding */
   color: white;
-  height: 100svh;
   width: 100%;
   display: flex;
   border-bottom: 2rem solid white;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-#faq h2 {
-  font-size: 2rem;
+/* Section Title */
+.h2 {
+  font-size: 1.2em;
+  width: 70%;
+  padding: 1rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin: 2rem auto;
   color: white;
   border: 2px solid white;
-  padding: 1rem 2rem;
   border-radius: 10px;
   box-shadow: 3px 3px 10px rgb(255, 254, 254);
   background: linear-gradient(145deg, blue, white);
 }
 
-/* FAQ Item */
+/* FAQ Item Box */
 .faq-item {
   background: rgba(255, 255, 255, 0.9);
-  padding: 1.5rem;
-  margin-bottom: 15px;
+  padding: 1rem;
+  margin-bottom: 2rem;
   border-radius: 12px;
-  width: 70%;
+  width: 90%;
   box-shadow: 3px 3px 10px #f7f6f6;
-  transition: box-shadow 0.3s ease-in-out;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hide the answer by default */
-.faq-item p {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
-}
-
-/* Show the answer on hover */
-.faq-item:hover p {
-  max-height: 300px;
-  opacity: 1;
-}
-
-/* Hover Effect */
 .faq-item:hover {
   box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.5);
   transform: scale(1.03);
 }
 
 .faq-item h3 {
-  font-size: 1.6rem;
+  font-size: 1em;
   margin-bottom: 0.7rem;
   text-decoration: underline;
-  text-align: center;
+  text-align: left;
   color: black;
 }
 
 .faq-item p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.6;
-  text-align: center;
+  text-align: left;
   color: black;
-  margin-top: 10px;
+  margin-top: 0.9rem;
 }
 
+/* Responsive Fix */
+@media (min-width: 768px) {
+  .faq .h2 h2 {
+    font-size: 2.5em;
+  }
+  .faq .faq-item {
+    width: 70%;
+  }
+  .faq .faq-item h3 {
+    font-size: 1.7em;
+  }
+  .faq .faq-item p {
+    font-size: 1.2em;
+  }
+}
 /* Contact Section */
-#contact {
-  padding: 7rem;
+.contact-section {
+  padding: 4rem;
   color: white;
   text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-#contact h2 {
-  font-size: 2rem;
-  margin-bottom: 4rem;
+.contact-heading {
+  font-size: 1em;
+  margin: 3rem auto;
   border: 2px solid white;
   padding: 1rem;
   border-radius: 10px;
@@ -353,25 +355,19 @@ body {
   box-shadow: 3px 3px 10px white;
 }
 
-#contact p {
-  margin-bottom: 3rem;
-  margin-top: -1rem;
-  font-size: 1.2rem;
-}
-
-#contact form {
+.contact-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-#contact input,
-#contact textarea {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
-  max-width: 600px;
   padding: 0.8rem;
-  margin-bottom: 1rem;
   border-radius: 10px;
   border: 2px solid white;
   outline: none;
@@ -381,18 +377,18 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-#contact input:focus,
-#contact textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
   box-shadow: 0 0 10px white;
   transform: scale(1.02);
 }
 
-#contact textarea {
+.contact-form textarea {
   height: 10rem;
   resize: none;
 }
 
-#contact button {
+.contact-form button {
   padding: 0.8rem 1.4rem;
   background: linear-gradient(145deg, blue, white);
   color: black;
@@ -405,48 +401,29 @@ body {
   box-shadow: 3px 3px 10px white;
 }
 
-#contact button:hover {
+.contact-form button:hover {
   background-color: #555;
   transform: scale(1.1);
   box-shadow: 5px 5px 15px white;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  #contact {
-    padding: 4rem;
+@media (min-width: 768px) {
+  .contact-section .contact-heading {
+    font-size: 3em;
+    width: 70%;
   }
-  #contact h2 {
-    font-size: 1.8rem;
-  }
-  #contact p {
-    font-size: 1rem;
-  }
-  #contact input,
-  #contact textarea {
-    width: 90%;
-    font-size: 0.9rem;
-  }
-  #contact button {
-    font-size: 0.9rem;
+  .contact-section .contact-form label,
+  .contact-section .contact-form input,
+  .contact-section .contact-form button {
+    font-size: 1.7em;
+    margin-top: 1rem;
   }
 }
-/* Reveal sections on load */
-body.loaded #home,
-body.loaded #about,
-body.loaded #faq,
-body.loaded #contact,
-body.loaded .faq-item {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Footer Section */
 footer {
   background-color: #222;
   color: white;
   text-align: center;
-  padding: 2rem 0;
+  padding: 1rem 0;
   font-size: 1rem;
   position: relative;
   bottom: 0;
@@ -483,4 +460,10 @@ footer .social-links a {
 
 footer .social-links a:hover {
   transform: scale(1.2);
+}
+
+@media (min-width: 768px) {
+  footer {
+    font-size: 2em;
+  }
 }/*# sourceMappingURL=style.css.map */

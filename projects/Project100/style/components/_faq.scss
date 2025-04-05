@@ -1,6 +1,6 @@
-/* FAQ Section Styling */
+/* FAQ Section */
 .faq {
-  padding: 2rem auto;
+  padding: 2rem 0; /* 'auto' doesn't work on padding */
   color: white;
   width: 100%;
   display: flex;
@@ -10,10 +10,13 @@
   flex-direction: column;
 }
 
+/* Section Title */
 .h2 {
-  font-size: 1em;
+  font-size: 1.2em;
+  width: 70%;
+  padding: 1rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin: 2rem auto;
   color: white;
   border: 2px solid white;
   border-radius: 10px;
@@ -21,17 +24,17 @@
   background: linear-gradient(145deg, blue, white);
 }
 
-/* FAQ Item */
+/* FAQ Item Box */
 .faq-item {
   background: rgba(255, 255, 255, 0.9);
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   border-radius: 12px;
   width: 90%;
   box-shadow: 3px 3px 10px #f7f6f6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect */
 .faq-item:hover {
   box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.5);
   transform: scale(1.03);
@@ -46,9 +49,28 @@
 }
 
 .faq-item p {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   line-height: 1.6;
   text-align: left;
   color: black;
   margin-top: 0.9rem;
+}
+
+/* Responsive Fix */
+@media (min-width: 768px) {
+  .faq {
+    .h2 h2 {
+      font-size: 2.5em;
+    }
+    .faq-item {
+      width: 70%;
+
+      h3 {
+        font-size: 1.7em;
+      }
+      p {
+        font-size: 1.2em;
+      }
+    }
+  }
 }
